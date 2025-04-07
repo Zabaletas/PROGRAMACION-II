@@ -5,7 +5,6 @@ public class JuegoAdivinaPar extends JuegoAdivinaNumero {
     public JuegoAdivinaPar(int vidasIniciales) {
         super(vidasIniciales);
     }
-
     @Override
     public boolean validaNumero(int numero) {
         if (!super.validaNumero(numero)) {
@@ -17,7 +16,6 @@ public class JuegoAdivinaPar extends JuegoAdivinaNumero {
         }
         return true;
     }
-
     @Override
     public void juega() {
         reiniciaPartida();
