@@ -6,17 +6,14 @@ class A {
         this.x = x;
         this.z = z;
     }
-
     public void incrementaXZ() {
         this.x = this.x + 1;
         this.z = this.z + 1;
     }
-
     public void incrementaZ() {
         this.z = this.z + 1;
     }
 }
-
 class B {
     public int y;
     public int z;
@@ -25,17 +22,14 @@ class B {
         this.y = y;
         this.z = z;
     }
-
     public void incrementaYZ() {
         this.y = this.y + 1;
         this.z = this.z + 1;
     }
-
     public void incrementaZ() {
         this.z = this.z + 1;
     }
 }
-
 class D extends A {
     B b;
 
@@ -43,29 +37,24 @@ class D extends A {
         super(x, z);
         this.b = new B(y, z);
     }
-
     public void incrementaXYZ() {
         this.x = this.x + 1;
         this.b.y = this.b.y + 1;
         this.z = this.z + 1;
         this.b.z = this.b.z + 1;
     }
-
     public void incrementaYZ() {
         this.b.incrementaYZ();
     }
-
     // Java no permite herencia múltiple, así que debemos manejar B manualmente
     public void incrementaZB() {
         this.b.incrementaZ();
     }
-
     @Override
     public String toString() {
         return "(x=" + this.x + ", y=" + this.b.y + ", z=" + this.z + ")";
     }
 }
-
 public class HerenciaMult {
     public static void main(String[] args) {
         D d = new D(5, 10, 15);
